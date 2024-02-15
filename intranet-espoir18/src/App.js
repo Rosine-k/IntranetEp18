@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Connexion from "./pages/Connexion/index";
+import Agenda from "./pages/Agenda/index";
+import Formulaire from "./pages/Formulaire inscription/index";
+import Inscription from "./pages/Inscription/index";
+import Liste from "./pages/Liste adherents/index";
+import Notification from "./pages/Notification/index";
+import Utilisateur from "./pages/Parametres utilisateur/index";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>    
+      <Routes>
+        <Route path="/connexion" element={<Connexion />} />
+        <Route path="/agenda" element={<Agenda />} />
+        <Route path="/formulaire" element={<Formulaire />} />        
+        <Route path="/inscription" element={<Inscription />} />   
+        <Route path="/liste" element={<Liste />} />  
+        <Route path="/notification" element={<Notification />} />
+        <Route path="/utilisateur" element={<Utilisateur />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
